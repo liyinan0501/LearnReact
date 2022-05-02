@@ -6,5 +6,6 @@ class App extends Component {
     return
   }
 }
+//ga
 
 createRoot(document.getElementById('root')).render(<App />)
