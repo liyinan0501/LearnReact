@@ -30,16 +30,6 @@ class App extends Component {
     //以上简写如下：
     this.setState((state) => ({ count: state.count + 1 }))
     // 以上的state依赖于上一次的state
-    this.setState((state) => ({ count: state.count + 1 }))
-    this.setState((state) => ({ count: state.count + 1 }))
-    this.setState((state) => ({ count: state.count + 1 }))
-    console.log(this.state.count)
-    this.setState(
-      (state) => ({ count: state.count + 1 }),
-      () => {
-        console.log(this.state.count)
-      }
-    )
   }
 }
 
