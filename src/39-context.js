@@ -25,7 +25,7 @@ class Father extends Component {
     return (
       <div>
         <h3>Father Component</h3>
-        <Son color></Son>
+        <Son></Son>
       </div>
     )
   }
