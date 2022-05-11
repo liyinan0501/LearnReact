@@ -37,14 +37,14 @@ class App extends Component {
                 <NavLink to="my">My Account</NavLink>
               </li>
               <li>
-                <NavLink to="/friend/my">My Friend</NavLink>
+                <NavLink to="/friend">My Friend</NavLink>
               </li>
             </ul>
             {/* 4. Using Router, making the route rules */}
             <Routes>
-              <Route index element={<Home />}></Route>
+              <Route path="/" element={<Home />}></Route>
               <Route path="/my" element={<My />}></Route>
-              <Route path="/friend/my" element={<Friend />}></Route>
+              <Route path="/friend" element={<Friend />}></Route>
             </Routes>
           </div>
         </Router>
