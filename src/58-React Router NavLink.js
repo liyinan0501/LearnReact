@@ -3,9 +3,8 @@ import { createRoot } from 'react-dom/client'
 import Home from './55-pages/Home'
 import My from './55-pages/My'
 import Friend from './55-pages/Friend'
-import NotFound from './55-pages/NotFound'
 
-// 59-404page
+// 58-NavLink
 // 1. import core components
 import {
   BrowserRouter as Router,
@@ -43,8 +42,7 @@ class App extends Component {
             </ul>
             {/* 4. Using Router, making the route rules */}
             <Routes>
-              <Route path="*" element={<NotFound />}></Route>
-              <Route index element={<Home />}></Route>
+              <Route path="/" element={<Home />}></Route>
               <Route path="/my" element={<My />}></Route>
               <Route path="/friend" element={<Friend />}></Route>
             </Routes>
