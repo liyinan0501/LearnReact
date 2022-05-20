@@ -1,61 +1,33 @@
 import React, { Component } from 'react'
 import { createRoot } from 'react-dom/client'
-import Home from './55-pages/Home'
-import My from './55-pages/My'
-import Friend from './55-pages/Friend'
-import NotFound from './55-pages/NotFound'
-import Profile from './55-pages/Profile'
-import Privacy from './55-pages/Privacy'
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom'
+import Detail from './61-pages/Detail'
 
-// 60-nested routes
-// 1. import core components
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-} from 'react-router-dom'
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <style>
-          {`
-          .active {
-            color:red;
-            font-weight:700
-          }
-         `}
-        </style>
-        {/* 2. All of stuff nasted in Router */}
-        <Router>
-          <div>
-            <h1>React Router Implement Process</h1>
-            <ul>
-              {/* 3. provide nav link to Link component */}
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="my">My Account</NavLink>
-              </li>
-              <li>
-                <NavLink to="friend">My Friend</NavLink>
-              </li>
-            </ul>
-            {/* 4. Using Router, making the route rules */}
-            <Routes>
-              <Route path="*" element={<NotFound />}></Route>
-              <Route index element={<Home />}></Route>
-              <Route path="my" element={<My />}>
-                <Route path="profile" element={<Profile />}></Route>
-                <Route path="privacy" element={<Privacy />}></Route>
-              </Route>
-              <Route path="friend" element={<Friend />}></Route>
-            </Routes>
-          </div>
-        </Router>
-      </React.Fragment>
+      <Router>
+        <div>
+          <h1>React Router Implement Process</h1>
+          <ul>
+            <li>
+              <Link to="detail/1">Product 1</Link>
+            </li>
+            <li>
+              <Link to="detail/2">Product 2</Link>
+            </li>
+            <li>
+              <Link to="detail/3">Product 3</Link>
+            </li>
+            <li>
+              <Link to="detail/4">Product 4</Link>
+            </li>
+          </ul>
+          <Routes>
+            <Route path="detail/:id" element={<Detail />}></Route>
+          </Routes>
+        </div>
+      </Router>
     )
   }
 }
